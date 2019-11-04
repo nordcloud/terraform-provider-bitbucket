@@ -292,7 +292,6 @@ func resourceRepositoryRead(d *schema.ResourceData, m interface{}) error {
 				d.Set("clone_ssh", clone_url.Href)
 			}
 		}
-
 		pipelinesConfigReq, err := client.Get(fmt.Sprintf("2.0/repositories/%s/%s/pipelines_config",
 			d.Get("owner").(string),
 			repoSlug))
